@@ -1,0 +1,40 @@
+Datos de prueba de Mercado Libre
+
+Mastercard	-	5031 7557 3453 0604	-	123	-	11/30
+Visa	-	4509 9535 6623 3704	-	123	-	11/30
+Visa Debito	-	4213 0163 1470 6756	-	123	-	11/30
+
+
+Cuentas de prueba mercado orto
+
+User ID: 3365057483
+Usuario: TESTUSER2202722215337536710
+Contraputa: SrE347mH4t
+Codigoputo: 057483
+
+
+
+Cosas a implementar en el footer
+
+Agregar tipos de productos:
+
+Destacados
+Ofertas
+Liquidación
+Todos los productos
+Últimos ingresos
+
+
+Sección Nosotros del footer
+Empresa
+Noticias
+Ubicación
+Contacto
+
+
+Sección Mi Cuenta del footer
+Mi cuenta
+Mis compras
+Mis direcciones
+Favoritos
+Boletín

@@ -1,0 +1,77 @@
+html, body {
+    height: 100%;
+}
+
+main {
+    margin-top: 100px;
+}
+
+.navbar {
+  min-height: 80px;
+}
+
+#cartCountBadge {
+    margin-left: -1rem;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+/* Estilos para el carrito */
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Mejoras para tarjetas de productos */
+.product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card .card-title a:hover {
+    color: #4a6cf7 !important;
+}
+
+.img-thumbnail {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.img-thumbnail:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
+}
+
+footer a, footer a:hover { text-decoration: none; }

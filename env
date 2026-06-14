@@ -1,0 +1,55 @@
+# ENVIRONMENT
+CI_ENVIRONMENT = development
+
+# APP
+app.baseURL = 'http://lpstore.local/'
+app.forceGlobalSecureRequests = false
+
+# DATABASE
+database.default.hostname = localhost
+database.default.database = lpstore_db
+database.default.username = root
+database.default.password = 
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+database.default.port = 3306
+
+#--------------------------------------------------------------------
+# LP STORE CONFIGURATION (Config\LpStore)
+#--------------------------------------------------------------------
+
+# Store Information
+Config\LpStore.storeName = "LP Store"
+Config\LpStore.storeDescription = "Tu tienda online de confianza"
+Config\LpStore.storeLogo = "logo.png"
+Config\LpStore.storeEmail = "email@dominio.com"
+
+# SEO
+Config\LpStore.metaDescription = "Encuentra los mejores productos en LP Store"
+Config\LpStore.metaKeywords = "tienda, productos, compras online, Uruguay"
+
+# Contact
+Config\LpStore.branches = '[{"streetAddress":"Nombre de la calle 1234","addressLocality":"Ciudad","addressRegion":"Departamento o Estado","postalCode":"12345","addressCountry":"Pais","phone":"+598 55512345", "email":"info@lpstore.com","whatsapp":"59895123456","schedule":[{"days":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:30","closes":"19:30"},{"days":["Saturday"],"opens":"09:30","closes":"14:00"}],"isMain":true,"latitude":-12.345,"longitude":-12.345}]'
+
+# Social Media (opcional)
+Config\LpStore.facebookUrl = ""
+Config\LpStore.instagramUrl = ""
+Config\LpStore.twitterUrl = ""
+Config\LpStore.youtubeUrl = ""
+
+# Google Maps API Key
+Config\LpStore.googleMapsApiKey = "YourGoogleMapsApiKey"
+
+# API (para la aplicación central)
+Config\LpStore.apiKey = ""
+
+# Mercado Pago
+MERCADOPAGO_ACCESS_TOKEN = ""
+MERCADOPAGO_PUBLIC_KEY = ""
+
+# Email (para envíos)
+email.SMTPHost = smtp.gmail.com
+email.SMTPUser = miusuario@gmail.com
+email.SMTPPass = miSuperPasswordMuySegura:p
+email.SMTPPort = 587
+email.SMTPCrypto = 'tls'
