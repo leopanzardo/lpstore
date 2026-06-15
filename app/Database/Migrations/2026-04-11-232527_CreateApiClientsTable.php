@@ -39,7 +39,7 @@ class CreateApiClientsTable extends Migration
         ]);
         
         $this->forge->addKey('id', true);
-        $this->forge->createTable('api_clients');
+        $this->forge->createTable('api_clients', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()

@@ -68,7 +68,7 @@ class CreateProductsTable extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('category_id');
         $this->forge->addForeignKey('category_id', 'categories', 'id', 'SET NULL', 'CASCADE');
-        $this->forge->createTable('products');
+        $this->forge->createTable('products', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()

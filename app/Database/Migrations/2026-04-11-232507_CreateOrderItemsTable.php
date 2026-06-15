@@ -73,7 +73,7 @@ class CreateOrderItemsTable extends Migration
         $this->forge->addForeignKey('order_id', 'orders', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('product_id', 'products', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('variation_id', 'product_variations', 'id', 'SET NULL', 'CASCADE');
-        $this->forge->createTable('order_items');
+        $this->forge->createTable('order_items', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()

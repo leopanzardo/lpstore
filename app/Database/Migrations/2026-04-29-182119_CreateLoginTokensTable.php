@@ -44,7 +44,7 @@ class CreateLoginTokensTable extends Migration
         $this->forge->addKey('user_id');
         $this->forge->addKey('code');
         $this->forge->addForeignKey('user_id', 'users', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('login_tokens');
+        $this->forge->createTable('login_tokens', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()

@@ -77,7 +77,7 @@ class CreateOrdersTable extends Migration
         $this->forge->addKey('user_id');
         $this->forge->addKey('status');
         $this->forge->addForeignKey('user_id', 'users', 'id', 'SET NULL', 'CASCADE');
-        $this->forge->createTable('orders');
+        $this->forge->createTable('orders', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()

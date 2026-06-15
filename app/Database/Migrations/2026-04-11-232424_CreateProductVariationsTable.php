@@ -68,7 +68,7 @@ class CreateProductVariationsTable extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('product_id');
         $this->forge->addForeignKey('product_id', 'products', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('product_variations');
+        $this->forge->createTable('product_variations', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()

@@ -52,7 +52,7 @@ class CreateApiKeysTable extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('client_id');
         $this->forge->addForeignKey('client_id', 'api_clients', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('api_keys');
+        $this->forge->createTable('api_keys', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()

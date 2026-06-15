@@ -59,7 +59,7 @@ class CreateCategoriesTable extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('parent_id');
         $this->forge->addForeignKey('parent_id', 'categories', 'id', 'CASCADE', 'SET NULL');
-        $this->forge->createTable('categories');
+        $this->forge->createTable('categories', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()

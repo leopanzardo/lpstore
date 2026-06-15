@@ -6,6 +6,8 @@ main {
     margin-top: 100px;
 }
 
+footer a, footer a:hover { text-decoration: none; }
+
 .navbar {
   min-height: 80px;
 }
@@ -67,11 +69,33 @@ main {
     opacity: 0.8;
 }
 
-/* Responsive */
+/* Logo responsivo */
+.navbar-brand img {
+    height: 54px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+    .navbar-brand img {
+        height: 42px;
+    }
+}
+
+/* Móviles (menos de 768px) */
 @media (max-width: 768px) {
+    .navbar-brand img {
+        height: 32px;
+    }
     .card {
         margin-bottom: 15px;
     }
 }
 
-footer a, footer a:hover { text-decoration: none; }
+/* Móviles pequeños (menos de 480px) */
+@media (max-width: 480px) {
+    .navbar-brand img {
+        height: 28px;
+    }
+}

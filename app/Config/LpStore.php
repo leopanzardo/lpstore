@@ -34,6 +34,8 @@ class LpStore extends BaseConfig
     // Mercado Pago
     public string $mercadopagoPublicKey = '';
     
+    public array $logos = [];
+    
     // Constructor para cargar desde .env
     public function __construct()
     {
@@ -62,5 +64,79 @@ class LpStore extends BaseConfig
                 $this->branches = $branchesArray;
             }
         }
+        
+        // Detectar automáticamente todos los logos en assets/images/
+        $this->detectLogos();
+    }
+    
+    /**
+     * Detecta automáticamente todos los logos disponibles en assets/images/
+     * Busca archivos que empiecen con "logo" (logo.png, logo.webp, logo.jpg, etc.)
+     */
+    private function detectLogos(): void
+    {
+        $logosPath = FCPATH . 'assets/images/';
+        $this->logos = [];
+        
+        if (!is_dir($logosPath)) {
+            return;
+        }
+        
+        $files = scandir($logosPath);
+        $logoPattern = '/^logo\.[a-zA-Z0-9]+$/';
+        
+        foreach ($files as $file) {
+            if (preg_match($logoPattern, $file)) {
+                $extension = pathinfo($file, PATHINFO_EXTENSION);
+                $this->logos[] = [
+                    'file' => $file,
+                    'path' => 'assets/images/' . $file,
+                    'type' => $extension,
+                    'mime' => $this->getMimeType($extension),
+                    'size' => filesize($logosPath . $file)
+                ];
+            }
+        }
+        
+        // Ordenar por preferencia: webp > avif > jpg > png > otros
+        usort($this->logos, function($a, $b) {
+            $order = ['webp' => 1, 'avif' => 2, 'jpg' => 3, 'jpeg' => 4, 'png' => 5];
+            $aOrder = $order[$a['type']] ?? 99;
+            $bOrder = $order[$b['type']] ?? 99;
+            return $aOrder <=> $bOrder;
+        });
+    }
+    
+    private function getMimeType($extension): string
+    {
+        return match ($extension) {
+            'webp' => 'image/webp',
+            'avif' => 'image/avif',
+            'jpg', 'jpeg' => 'image/jpeg',
+            'png' => 'image/png',
+            'gif' => 'image/gif',
+            default => 'application/octet-stream'
+        };
+    }
+    
+    /**
+     * Obtiene el mejor logo disponible (prioridad: webp > avif > jpg > png)
+     */
+    public function getBestLogo(): ?array
+    {
+        return $this->logos[0] ?? null;
+    }
+    
+    /**
+     * Obtiene el logo en un formato específico
+     */
+    public function getLogoByType($type): ?array
+    {
+        foreach ($this->logos as $logo) {
+            if ($logo['type'] === $type) {
+                return $logo;
+            }
+        }
+        return null;
     }
 }

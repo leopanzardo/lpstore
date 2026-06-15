@@ -37,7 +37,7 @@ class CreateFavoritesTable extends Migration
         $this->forge->addKey(['user_id', 'product_id'], false, true, 'unique_favorite'); // Unique composite key
         $this->forge->addForeignKey('user_id', 'users', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('product_id', 'products', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('favorites');
+        $this->forge->createTable('favorites', true, ['ENGINE' => 'InnoDB']);
     }
 
     public function down()

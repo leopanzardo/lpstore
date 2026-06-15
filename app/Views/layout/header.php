@@ -16,11 +16,19 @@
 	<nav class="navbar navbar-expand-md bg-primary bg-gradient shadow fixed-top">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="<?= base_url() ?>">
-				<?php if ($lpConfig->storeLogo ?? false): ?>
-					<img src="<?= base_url('uploads/' . $lpConfig->storeLogo) ?>" alt="<?= $lpConfig->storeName ?>" height="40">
-				<?php else: ?>
-					<?= $lpConfig->storeName ?? 'LP Store' ?>
-				<?php endif; ?>
+			    <?php if (!empty($lpConfig->logos)): ?>
+			        <picture>
+			            <?php foreach ($lpConfig->logos as $logo): ?>
+			                <source srcset="<?= base_url($logo['path']) ?>" type="<?= $logo['mime'] ?>">
+			            <?php endforeach; ?>
+			            <img src="<?= base_url($lpConfig->logos[0]['path']) ?>" 
+			                 alt="<?= $lpConfig->storeName ?>" 
+			                 height="54" 
+			                 class="logo-img">
+			        </picture>
+			    <?php else: ?>
+			        <?= $lpConfig->storeName ?>
+			    <?php endif; ?>
 			</a>
 
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
