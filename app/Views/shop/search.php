@@ -17,7 +17,7 @@
             <div class="col-md-3 mb-4">
                 <div class="card h-100 product-card">
                     <a href="<?= base_url('producto/' . $product->slug) ?>">
-                        <img src="<?= base_url('uploads/products/thumb_' . ($product->id) . '.jpg') ?>" 
+                        <img src="<?= base_url('assets/images/products/thumb_' . ($product->id) . '.jpg') ?>" 
                              class="card-img-top" 
                              alt="<?= esc($product->name) ?>"
                              onerror="this.src='<?= base_url('assets/images/no-image.jpg') ?>'">

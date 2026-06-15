@@ -230,7 +230,7 @@ class ProductSeeder extends Seeder
             // iPhone 15 Pro
             [
                 'product_id' => $productIds[0],
-                'image_path' => 'uploads/products/iphone15pro-1.jpg',
+                'image_path' => 'iphone15pro-1.jpg',
                 'is_primary' => true,
                 'sort_order' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
@@ -238,7 +238,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 'product_id' => $productIds[0],
-                'image_path' => 'uploads/products/iphone15pro-2.jpg',
+                'image_path' => 'iphone15pro-2.jpg',
                 'is_primary' => false,
                 'sort_order' => 2,
                 'created_at' => date('Y-m-d H:i:s'),
@@ -247,7 +247,7 @@ class ProductSeeder extends Seeder
             // MacBook Pro
             [
                 'product_id' => $productIds[2],
-                'image_path' => 'uploads/products/macbookpro.jpg',
+                'image_path' => 'macbookpro.jpg',
                 'is_primary' => true,
                 'sort_order' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
@@ -256,7 +256,7 @@ class ProductSeeder extends Seeder
             // Camisa Oxford
             [
                 'product_id' => $productIds[3],
-                'image_path' => 'uploads/products/camisa-oxford.jpg',
+                'image_path' => 'camisa-oxford.jpg',
                 'is_primary' => true,
                 'sort_order' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
